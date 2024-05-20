@@ -1,12 +1,11 @@
-/* eslint-disable react/jsx-key */
 import { Header } from "./components/Header";
 import "./global.css";
 import styles from './App.module.css';
-import { Post } from './components/Post.jsx';
-import { Sidebar } from "./components/Sidebar.jsx";
+import { Post, PostType } from './components/Post';
+import { Sidebar } from "./components/Sidebar";
 
 
-const posts = [
+const posts: PostType[] = [
   {
     id: 1,
     author: {
@@ -52,9 +51,7 @@ export function App() {
             return (
               <Post
                 key={post.id}
-                author={post.author}
-                content={post.content}
-                publishedAt={post.publishedAt}
+                post={post}
               />
             )
           })}
